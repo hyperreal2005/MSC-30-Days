@@ -1,0 +1,102 @@
+'''The first three problems were apptempted in the Codechef Starter 101 Contest'''
+#For problem https://www.codechef.com/problems/SMARTER
+
+from math import ceil
+for _ in range(int(input())):
+    l,v1,v2=map(int, input().split())
+    t=(ceil(l/v1)-ceil(l/v2))
+    print(t-1)
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+#For problem https://www.codechef.com/problems/OFFBY1
+
+a,b=map(int, input().split())
+t=a+b
+print(str(t)+"1")
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+#For problem https://www.codechef.com/problems/WARRIORCHEF
+''' The written code, seems to return the correct output during a dry run, hower upon submission it said Time Limit Error. So, not an efficient code'''
+for _ in range(int(input())):
+    n,h=map(int,input().split())
+    l=list(map(int,input().split()))
+    c=False
+    x=0
+    v=0
+    while True:
+        v=x
+        for i in l:
+            if i<=x:
+                x-=i
+            else:
+                n-=i
+            if n>0:
+                c=True
+                break
+        if c==True:
+            break
+        else:
+            v+=1
+    print(x)
+
+'''Which is why I tried to write it in C, thinking that maybe the TLE would get resolved by doing so, since python seems to give plenty of TLE's.'''
+#include <stdio.h>
+#define s 10000
+int main(void) {
+	int a[s],x,t,i,c=0,h,j,n;
+	scanf("%d",&t);
+	for (i=0;i<t;i++)
+	{
+	    scanf("%d%d",&n,&h);
+	    printf("%d%d",n,h);
+	    for (j=0;j<n;j++)
+	        scanf("%d",&a[j]);
+	    while (2>1)
+	    {   x=c;
+    	    for (j=0;j<n;j++)
+    	    {
+    	        if (a[j]<=x)
+    	            x-=a[j];
+    	        else
+    	            h-=a[j];
+    	    }
+    	    
+    	    if (h>0)
+    	    {
+    	        printf("%d",c);
+    	        goto free;
+    	    }
+    	    else
+    	        c+=1;
+	    }
+	    
+	    free:
+	        c=0;
+	}
+	return 0;  
+	}
+'''But, I was wrong and I once again, upon submission was faced by a TLE. So, not Python's fault but just inefficient code.'''
+
+
+#For problem https://www.codechef.com/problems/HALLCON?tab=statement
+'''The code written here seems to be working just fine while dry running but and also returns the correct output for the sample test case however upon submission, the first test case 
+itself fails. So, maybe the code is not factoring in edge cases or maybe its just wrong and th elogic returns the correct answer only for the sample test case.'''
+
+for g in range(int(input())):
+    x,y=map(int,input().split())
+    a=list(map(int,input().split()))
+    b=list(map(int,input().split()))
+    o=0
+    d=0
+    c=0
+    for i in range(x):
+        for j in range(c,y):
+            o+=1
+            if a[i]==b[j]:
+                c=o
+                d+=1
+                break
+    print(d)
+            
