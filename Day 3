@@ -1,0 +1,81 @@
+#For problem https://www.codechef.com/practice/INTNT01/problems/DIVIDEMAKEEQ
+from math import gcd
+from functools import reduce
+for _ in range(int(input())):
+    n=int(input())
+    a=list(map(int,input().split()))
+    s=reduce(gcd,a)
+    while True:
+        if s in a:
+            a.remove(s)
+        else:
+            break
+    print(len(a))
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+#For problem https://www.codechef.com/practice/INTNT01/problems/APPLEORANGE
+from math import gcd 
+for _ in range(int(input())):
+    n,m=map(int,input().split())
+    print(gcd(n,m))
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+For problem https://www.codechef.com/practice/INTGRA01/problems/PERMEXIS
+t=int(input())
+for i in range(t):
+    n=int(input())
+    l=[int(i) for i in input().split()][:n]
+    l.sort()
+    d={}
+    c=True
+    for j in range(n-1):
+        if abs(l[j]-l[j+1])>1:
+            c=False
+            break
+    if c==False:
+        print("NO")
+    else:
+        print('YES')
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+For problem https://www.codechef.com/practice/INTGRA01/problems/XYSTR
+for i in range(int(input())):
+    s=input() 
+    c=0
+    j =0
+    while(j <(len(s)-1)):
+        if s[j]!=s[j+1]:
+            c+=1 
+            j+=2
+        else:
+            j+=1 
+    
+    print(c)
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+#For problem https://www.codechef.com/practice/INTNT01/problems/STRNG
+'''The code seems to work perfectly fine for the sample test cases and also passes the first test case upon submission, however it fails the second test case with a wrong answer. Maybe, an error in the logic, or diregard of edge cases, bothing of which don't seem to be the case. So, problem needs to revisited along with the problems done days 1 and 2'''
+
+from math import gcd
+from functools import reduce
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int,input().split()))
+    g=reduce(gcd,l)
+    c=0
+    for i in range(n):
+        x=l.copy()
+        s=l.copy()
+        x[i]=x[i]+1
+        s[i]=s[i]-1
+        if reduce(gcd,x)!=g or reduce(gcd,s)!=g:
+            c+=1
+    print(c)
