@@ -1,0 +1,53 @@
+#For problem https://www.codechef.com/problems/LECANDY
+
+for _ in range(int(input())):
+    n,c=map(int, input().split())
+    l=list(map(int, input().split()))
+    if c-sum(l)>=0:
+        print("Yes")
+    else:
+        print("No")
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+#For problem https://www.codechef.com/problems/CLEANUP
+for _ in range(int(input())):
+    n,m=map(int, input().split())
+    l=list(map(int, input().split()))
+    for i in range(1,n+1):
+        if i not in l:
+            l.append(i)
+    del l[:m]
+    if len(l)>1:
+        [print(i, end=' ') for i in l[0:n:2]]
+        print()
+        [print(i, end=' ') for i in l[1:n:2]]
+        print()
+    elif len(l)==1:
+        print(l[0])
+        print(-1)
+    else:
+        print(-1,-1,sep='\n')
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+#For problem https://www.codechef.com/problems/CHFHEIST
+'''The code works perfectly fine for the sample test cases and also for the very first submission test case but fails at the second test test case outh of the two submission test cases due to a time limit error. So, the question needs to be revisted, probably written in c or some more efficient way in python itself'''
+for _  in range(int(input())):
+    n,d,p,q=map(int, input().split())
+    sum=0
+    sc,pc=0,1
+    for i in range(n):
+        sum+=p
+        sc+=1
+        if sc==d:
+            sc=0
+            p+=q
+    print(sum)
+
+#For problem https://www.codechef.com/problems/PRESENTS?tab=statement
+for _ in range(int(input())):
+    n=int(input())
+    print(n-(n//5))
+
+'''The code ran just fine and submitted with all test cases passed.'''
