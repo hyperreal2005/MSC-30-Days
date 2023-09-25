@@ -1,0 +1,58 @@
+#For problem https://www.codechef.com/problems/BROKPHON
+'''The code passes all sample test cases and test cases b/w 2<=N<=10^3, but returns a Time Limit Error for test cases with 2<=N<=10^5. So, the program needs to be written with a different aproach maybe. Requires Revisist''' 
+
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    d=[]
+    for i in range(n-1):
+        if l[i]!=l[i+1]:
+            if (i+1 not in d): 
+                if (i not in d):
+                    d.append(i)
+                    d.append(i+1)
+                else:
+                    d.append(i+1)
+                print
+    print(len(d))      
+
+
+# For problem https://www.codechef.com/problems/KDELI
+
+for i in range(int(input())):
+    n,k,l=map(int,input().split())
+    t=list(map(int,input().split()))
+    t.sort(reverse=True)
+    print(sum(t[l-1:n:k]))
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+#For problem https://www.codechef.com/problems/ATM2
+
+T=int(input())
+for i in range(T):
+    N,K=map(int,input().split())
+    L=[int(i) for i in input().split()][:N]
+    for i in L:
+        if i<=K:
+            print(1,end='')
+            K-=i
+        else:
+            print(0,end='')
+    print()
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+#For problem https://www.codechef.com/problems/MOZZ
+
+for _ in range(int(input())):
+    j=list(input())
+    s=input()
+    d=[]
+    c=0
+    for i in j:
+        if (i not in d) and (i in s):
+            d.append(i)
+            c+=1
+    print(c)
+'''The code ran just fine and submitted with all test cases passed.'''
