@@ -1,0 +1,41 @@
+#For problem https://www.codechef.com/problems/GDOG?tab=statement
+
+for _ in range(int(input())):
+    n,k=map(int, input().split())
+    t=0
+    for i in range(k):
+        t=max(t,n%(i+1))
+    print(t)   
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+#For problem https://www.codechef.com/problems/LONGSEQ?tab=statement
+'''This code passes for the sample test cases and for 1/4 of the submission test cases but fails in the others'''
+for _ in range(int(input())):
+    n=list(input())
+    d={}
+    for i in n:
+        if i not in d:
+            d[i]=1
+        else:
+            d[i]+=1
+    if len(d)==2:
+        if list(d.values())[-1]<=1:
+            print("Yes")
+        else:
+            print("No")
+    else:
+            print("No")
+
+'''Rethinking and rewriting the code'''
+
+for _ in range(int(input())):
+    n=input()
+    p=n.count('0')
+    q=n.count('1')
+    if (p==1) or (q==1):
+        print("Yes")
+    else:
+        print("No")
+'''The code ran just fine and submitted with all test cases passed.'''
