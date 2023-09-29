@@ -1,0 +1,25 @@
+#For problem https://www.codechef.com/problems/STONES?tab=statement
+
+for _ in range(int(input())):
+    j=input()
+    s=input()
+    c=0
+    for i in s:
+        if i in j:
+            c+=1
+    print(c)
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+#For problem https://leetcode.com/problems/build-array-from-permutation/
+
+class Solution:
+    def buildArray(self, nums: List[int]) -> List[int]:
+        ans=[]
+        for i in nums:
+            ans.append(nums[i])
+        return ans
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
