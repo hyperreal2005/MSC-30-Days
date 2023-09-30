@@ -1,0 +1,46 @@
+#For problem https://www.codechef.com/problems/TRICOIN?tab=statement
+
+for _ in range(int(input())):
+    n=int(input())
+    c,d=1,0
+    while n>=0:
+        d+=1
+        n-=c
+        c+=1
+    print(d-1)
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/problems/AIRLINE
+
+for _ in range(int(input())):
+    a,b,c,d,e=map(int, input().split())
+    if a+b<=d and c<=e or a+c<=d and b<=e or b+c<=d and a<=e:
+        print("Yes")
+    else:
+        print("No")
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/problems/WATSCORE
+
+for _ in range(int(input())):
+    n=int(input())
+    d={}
+    for i in range(n):
+        p,s=map(int,input().split())
+        if p not in d and p<9:
+            d[p]=s
+        elif p<9:
+            if s>d[p]:
+                d[p]=s
+    print(sum(list(d.values())))   
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
