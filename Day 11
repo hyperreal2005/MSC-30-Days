@@ -1,0 +1,25 @@
+#For problem https://www.codechef.com/problems/MISSP?tab=statement
+
+for _ in range(int(input())):
+    n=int(input())
+    l=[]
+    j=0
+    for i in range(n):
+        l.append(int(input()))
+    l.sort()
+    d={}
+    for i in l:
+        if i not in d:
+            d[i]=1
+        else:
+            d[i]+=1
+    for i in d:
+        if d[i]%2==1:
+            print(i)
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/problems/CONCUSSIVE?tab=statement
+'''The written code passes for the sample test cases but results in a TLE for the submission test cases. I think it has to do with the Olog(n^2) complexity of the loop which results in the TLE '''
