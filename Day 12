@@ -1,0 +1,91 @@
+#For problem https://www.codechef.com/problems/CHEFSTEP
+
+for _ in range(int(input())):
+    n,k=map(int, input().split())
+    l=list(map(int, input().split()))
+    s=''
+    for i in l:
+        if i%k==0:
+            s+='1'
+        else:
+            s+='0'
+    print(s)
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/practice/INTARR01/problems/DOMINANT2
+
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    d={}
+    for i in l:
+        if i not in d:
+            d[i]=1
+        else:
+            d[i]+=1
+    s,t=list(d.values()),list(d.values())
+    if t.count(max(t))>1:
+        print("No")
+    else:
+        print("Yes")
+
+
+#For problem https://www.codechef.com/practice/INTARR01/problems/EQUALELE
+'''The code passes for the sample test cases and also the very first submission test case, but returns a Time Limit Error on the second submission case.'''
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int,input().split()))
+    c=l.count(l[0])
+    for i in l:
+        if l.count(i)>c:
+            c=l.count(i)
+    print(n-c)
+
+'''Rewriting the program.'''
+
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int,input().split()))
+    d={}
+    for i in l:
+        if i not in d:
+            d[i]=1
+        else:
+            d[i]+=1
+    print(n-max(d.values()))
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/problems/HOLES
+
+for _ in range(int(input())):
+    d={"A":1 ,"B":2, "D":1, "O":1, "P":1, "Q":1, "R":1}
+    c=0
+    n=input()
+    for i in n:
+        if i.upper() in d:
+            c+=d[i]
+    print(c)
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/problems/TWOVSTEN
+
+for _ in range(int(input())):
+    n=int(input())
+    if n%5==0:
+        if n%10==0:
+            print(0)
+        else:
+            print(1)
+    else:
+        print(-1)
+
+'''The code ran just fine and submitted with all test cases passed.'''
