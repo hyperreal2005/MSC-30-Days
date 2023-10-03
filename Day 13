@@ -1,0 +1,34 @@
+#For problem https://www.codechef.com/problems/EVENTUAL
+
+for _ in range(int(input())):
+    n=int(input())
+    s=input()
+    c=True
+    for i in range(n):
+        if s.count(s[i])%2!=0:
+            c=False
+            break
+    if c==False:
+        print("NO")
+    else:
+        print("YES")
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/problems/MSNSADM1
+
+for _ in range(int(input())):
+    n=int(input())
+    a=list(map(int, input().split()))
+    b=list(map(int, input().split()))
+    d=[]
+    for i in range(n):
+        d.append(a[i]*20-b[i]*10)
+    if max(d)<0:
+        print(0)
+    else:
+        print(max(d))
+
+'''The code ran just fine and submitted with all test cases passed.'''
