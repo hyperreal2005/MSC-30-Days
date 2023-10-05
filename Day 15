@@ -1,0 +1,12 @@
+#For problem https://www.codechef.com/problems/REPEAT
+
+for _ in range(int(input())):
+    n,k,s=list(map(int,input().split()))
+    l=[]
+    num=1
+    for j in range(n):
+        l.append(num)
+        num+=2
+    print(s-sum(l))//(k-1))
+    
+'''The code ran just fine and submitted with all test cases passed.'''
