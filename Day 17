@@ -1,0 +1,15 @@
+#For problem https://www.codechef.com/problems/TRANCHAIN
+
+for _ in range(int(input())):
+    n=int(input())
+    l=list(input().split())
+    a=l.count('A')
+    b=l.count('B')
+    c=l.count('AB')
+    d=l.count('O')
+    if(a>=b):
+        print(a+c+d)
+    else:
+        print(b+c+d)
+
+'''The code ran just fine and submitted with all test cases passed.'''
