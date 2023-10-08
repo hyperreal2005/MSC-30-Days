@@ -1,0 +1,8 @@
+#For problem https://www.codechef.com/problems/EXUNA
+
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    print(min(sorted(l)))
+
+'''The code ran just fine and submitted with all test cases passed.'''
