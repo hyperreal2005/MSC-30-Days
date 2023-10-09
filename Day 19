@@ -1,0 +1,72 @@
+#For problem https://www.codechef.com/problems/ZOOZ
+
+for _ in range(int(input())):
+    n=int(input())
+    print("1"+"0"*(n-2)+"1")
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+#For problem https://www.codechef.com/problems/PLAYSTR
+
+for _ in range(int(input())):
+    n=int(input())
+    s=input()
+    r=input()
+    if s.count('1')==r.count('1') and s.count('0')==r.count("0"):
+        print("YES")
+    else:
+        print("NO")
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+#For problem https://www.codechef.com/problems/PROBDIFF
+
+'''The sample test cases pass but the submission case fails. So rewriting code.'''
+
+for _ in range(int(input())):
+    a1,a2,a3,a4=map(int, input().split())
+    l=[a1,a2,a3,a4]
+    i,c,d=0,0,0
+    while d<3:
+        if abs(l[i]-l[i+1]):
+            c+=1
+            del l[i:i+2]
+            d+=2
+        else:
+            l.remove(l[i])
+            d+=1
+        i=0
+    print(c) 
+
+
+'''The code passes for the test cases but fails a=once again in the submission case. So rewrting code.'''
+
+for _ in range(int(input())):
+    a1,a2,a3,a4=map(int, input().split())
+    l=[a1,a2,a3,a4]
+    if abs(a1-a2)>=1:
+        if abs(a3-a4)>=1:
+            print(2)
+        else:
+            print(1)
+    elif abs(a2-a3)>=1:
+        if abs(a1-a4)>=1:
+            print(2)
+        else:
+            print(1)
+    elif abs(a3-a4)>=1:
+        print(1)
+    else:
+        print(0)
+
+'''The code once again passes for the test case but fails for the submission case. So, will have to revisit this problem tomorrow to think of it from a different perspective.'''
+
+for _ in range(int(input())):
+    a1,a2,a3,a4=map(int, input().split())
+    if a1==a2==a3==a4:
+        print(0)
+    elif a2==a3 and (a1==a2 or a3==a4):
+        print(1)
+    else:
+        print(2)
