@@ -1,0 +1,193 @@
+#For problem https://www.codechef.com/problems/TWTCLOSE
+
+n,k=map(int, input().split())
+l=[]
+c=0
+for i in range (k):
+    s=input().upper()
+    if s=="CLOSEALL":
+        c=0
+        print(c)
+        l.clear()
+    if s not in l and s!='CLOSEALL':
+        c+=1
+        print(c)
+        l.append(s)
+    elif s in l:
+        c-=1
+        print(c)
+        l.remove(s)
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/problems/CHPINTU
+
+for _ in range(int(input())):
+    n,m=map(int, input().split())
+    l1=list(map(int, input().split()))
+    l2=list(map(int, input().split()))
+    d={}
+    for i in range(n):
+        if l1[i] not in d:
+            d[l1[i]]=l2[i]
+        else:
+            d[l1[i]]+=l2[i]
+    print(min(d.values()))
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/problems/SSCRIPT
+
+'''The code runs just fine for the test cases and passes for three of the four submission cases but results in a TLE at the fourth one, which I suppose is beacuse of the length of the '*' string, So rewriting the code.'''
+
+for _ in range(int(input())):
+    n,k=map(int, input().split())
+    s=input()
+    if s.find('*'*k)>-1:
+        print('yes')
+    else:
+        print('no')
+
+'''The code once again runs just fine for the test cases and passes for three of the four submission cases but results in a TLE at the fourth one, which I suppose is beacuse of the length of the '*' string, So rewriting the code.'''
+
+for _ in range(int(input())):    
+n,k=map(int, input().split())
+    s=input()
+    if ('*'*k) in s:
+        print('yes')
+    else:
+        print('no')
+
+'''The code ran just fine and submitted with all test cases passed. But I felt like it could be otptimised a little more. So, rewriting the code.'''
+for _ in range(int(input())):
+    n,k=map(int, input().split())
+    s=input()
+    c,l=0,[]
+    for i in s:
+        if i=='*':
+            c+=1
+        else:
+            l.append(c)
+            c=0
+    l.append(c)
+    if max(l)>=k:
+        print("Yes")
+    else:
+	print("No")
+
+'''The code seems more optimised the the previously written code.'''
+for _ in range(int(input())):
+    n,k=map(int, input().split())
+    s=input()
+    c,m=0,0
+    for i in s:
+        if i=='*':
+            c+=1
+        else:
+            m=max(c, m)
+            c=0
+    m=max(c,m)
+    if m>=k:
+        print("Yes")
+    else:
+        print("No")
+
+for _ in range(int(input())):
+    n,k=map(int, input().split())
+    s=input()
+    c,l=0,[]
+    for i in s:
+        if i=='*':
+            c+=1
+            if c==k:
+                print("Yes")
+                break
+        else:
+            c=0
+    if c<k:
+        print("No")
+
+#For problem https://www.codechef.com/problems/FRGTNLNG
+
+for _ in range(int(input())):
+    n,k=map(int, input().split())
+    l=list(map(str, input().split()))
+    p,d=[],[]
+    for i in l:
+        if i not in p:
+            p.append(i)
+    for i in range(k):
+        d.extend(list(map(str, input().split())))
+    for i in p:
+        if i in d:
+            print("YES", end=' ')
+        else:
+            print("NO", end=' ')
+    print()
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/problems/HCAGMAM1
+
+for _ in range(int(input())):
+    x,y=map(int, input().split())
+    s=input()
+    m,c,d=0,0,0
+    for i in s:
+        if i=='1':
+            c+=1
+            d+=1
+        else:
+            m=max(c,m)
+            c=0
+    m=max(c,m)
+    print(m*y + d*x)
+
+'''The code ran just fine and submitted with all test cases passed.'''   
+
+
+
+#For problem https://www.codechef.com/problems/EZSPEAK
+
+for _ in range(int(input())):
+    n=int(input())
+    s=input().lower()
+    m,c=0,0
+    for i in s:
+        if i not in "aeiou" :
+            c+=1
+        elif i in "aeiou":
+            m=max(c,m)
+            c=0
+    m=max(m,c)
+    if m>=4:
+        print("NO")
+    else:
+        print("YES")
+
+'''The code ran just fine and submitted with all test cases passed.'''  
+
+
+
+#For problem https://www.codechef.com/problems/TOTCRT
+
+for _ in range(int(input())):
+    n=int(input())
+    d={}
+    for i in range(3*n):
+        s,c=map(str, input().split())
+        if s not in d:
+            d[s]=int(c)
+        else:
+            d[s]+=int(c)
+    for i in sorted(d.values()):
+        print(i, end=' ')
+    print()
+
+'''The code ran just fine and submitted with all test cases passed.''' 
