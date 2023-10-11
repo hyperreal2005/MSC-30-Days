@@ -1,0 +1,98 @@
+#For problem https://www.codechef.com/problems/BINSTRING
+
+'''The code works just fine and passes for the sample test cases and the first submission case but ecounters a TLE for the second case. So, rewriting code.'''
+
+for _ in range(int(input())):
+    n=int(input())
+    s=input()
+    l=[]
+    for i in range(n):
+        t=list(s)
+        del t[i]
+        if t not in l:
+            l.append(t)
+    print(len(l))
+
+'''Changing approach from removing elements at indices and then verifying if they are not in the list. New approach will count if two consecutive elements different or not. If they are different then it will add to the counter c, since, the no. of distinct strings we can find is based on how many consectutively different elements we can find.'''
+
+for _ in range(int(input())):
+    n=int(input())
+    s=input()
+    c=0
+    for i in range(n-1):
+        if s[i]!=s[i+1]:
+            c+=1
+    print(c+1)
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/START103D/problems/OCTATHON
+
+x=int(input())
+if x<3:
+    print("GOLD")
+elif x>=3 and x<6:
+    print("SILVER")
+else:
+    print("BRONZE")
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/START103D/problems/BRUNCH
+
+for _ in range(int(input())):
+    x,y=map(int, input().split())
+    if y*20<=x:
+        print(20)
+    else:
+        print(x//y)
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/START103D/problems/DICENUM
+
+for _ in range(int(input())):
+    a1,a2,a3,b1,b2,b3=map(int, input().split())
+    la, lb=[a1,a2,a3], [b1,b2,b3]
+    la.sort(reverse=True)
+    lb.sort(reverse=True)
+    if la>lb:
+        print("Alice")
+    elif lb>la:
+        print("Bob")
+    else:
+        print("Tie")
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/START103D/problems/DIVISIBLEBY8
+
+'''The code works just fine for the test cases but returns a wrong answer for the submission cases. So, will have to revisit the problem tomorrow.'''
+
+for _ in range(int(input())):
+    n1,n2=map(int, input().split())
+    t=(n2%1000)
+    if t%8==0:
+        print(n2)
+    else:
+        s=str(n2)
+        if len(s)>=4:
+            p=s[0:-3]
+            t-=t%8
+            if len(str(t))<3:
+                p+='0'+str(t)
+                print(int(p))
+            else:
+                p+=str(t)
+                print(int(p))
+        else:
+            t-=t%8
+            print(int(t))
