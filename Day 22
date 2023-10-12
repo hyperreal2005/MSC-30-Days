@@ -1,0 +1,53 @@
+#For problem https://www.codechef.com/problems/TOTR
+
+t,m=map(str, input().split())
+a="abcdefghijklmnopqrstuvwxyz"
+d=dict(zip(list(a),list(m)))
+q=dict(zip(list(a.upper()), list(m.upper())))
+d.update(q)
+d['_']=" "
+for i in range(int(t)):
+    s=''
+    p=input()
+    for j in p:
+        if j in d:
+            s+=d[j]
+        else:
+            s+=j
+    print(s)
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/problems/PERMCLEAR
+
+'''The code works just fine for the sample test cases and for three out of five of the submission cases but encounters a TLE at the 4th case. So, will have to revisit the code.'''
+
+for _ in range(int(input())):
+    n=int(input())
+    la=list(map(int, input().split()))
+    k=int(input())
+    lb=list(map(int, input().split()))
+    for i in la:
+        if i not in lb:
+            print(i, end=' ')
+    print()
+
+
+
+#For problem https://www.codechef.com/problems/CHEFCHR
+
+for _ in range(int(input())):
+    s=input()
+    l=list(s)
+    c=0
+    for i in range(len(s)):
+        if sorted(l[i:i+4])==['c','e','f','h']:
+            c+=1
+    if c==0:
+        print("normal")
+    else:
+        print('lovely', c)
+
+'''The code ran just fine and submitted with all test cases passed.'''
