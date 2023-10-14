@@ -1,0 +1,159 @@
+#For problem https://www.codechef.com/problems/PERMCLEAR
+'''Revisiting a problem from Day 22. Rewriting the code by inputing the second array of elements into a set for which minimizes space time comlexity'''
+
+for _ in range(int(input())):
+    n=int(input())
+    la =list(map(int, input().split()))
+    k=int(input())
+    lb=set(map(int, input().split()))
+    for i in la:
+        if i not in lb:
+            print(i, end=' ')
+    print()
+
+#For problem https://www.codechef.com/problems/ABSTRING
+
+for _ in range(int(input())):
+    n=int(input())
+    s=input()
+    flag=False
+    for i in set(s):
+        if s.count(i)%2!=0:
+            print("NO")
+            flag=False
+            break
+        else:
+            flag=True 
+    if flag==True:
+        print("YES")
+
+
+#For problem https://www.codechef.com/problems/SWAPCW
+
+for _ in range(int(input())):
+    n=int(input())
+    s=list(input())
+    l=s.copy()
+    if s==sorted(s):
+        print("YES")
+    else:
+        for i in range(n//2):
+            if l[i]>l[n-1-i]:
+                l[i],l[-1-i]=l[-1-i],l[i]
+        if l==sorted(s):
+            print("YES")
+        else:
+            print("NO")
+
+
+#For problem https://www.codechef.com/problems/CHEFING
+
+for _ in range(int(input())):
+    n=int(input())
+    l,ls=[],[]
+    c,d=0,0
+    for i in range(n):
+        s=set(input())
+        l.append(len(s))
+        ls.append(s)
+    t=ls[l.index(min(l))]
+    for i in t:
+        c=0
+        for j in ls:
+            if i in j:
+                c+=1
+        if c==n:
+            d+=1
+    print(d)
+
+
+#For problem https://www.codechef.com/problems/NITIKA
+
+for _ in range(int(input())):
+    s=((input()).strip()).split()
+    if len(s)==1:
+        print(s[0].title())
+    elif len(s)==2:
+        print(s[0][0].upper()+'. '+s[1].title())
+    elif len(s)==3:
+        print(s[0][0].upper()+'. '+s[1][0].upper()+'. '+s[2].title())
+
+
+#For problem https://www.codechef.com/practice/LP2TO301/problems/MANYSUMS
+
+for _ in range(int(input())):
+    l,r=map(int, input().split())
+    d=list(range(l,r+1))
+    s=[]
+    t=len(d)
+    if t==1:
+        print(1)
+    else:
+        for i in range(t):
+            for j in range(i,t):
+                if d[i]+d[j] not in s:
+                    s.append(d[i]+d[j])
+        print(len(s))
+
+'''The code works just fine for the sample test cases but encounters a TLE for the submission test case. So, rewrting the code.'''
+
+for _ in range(int(input())):
+    l,r=map(int, input().split())
+    d=list(range(l,r+1))
+    s=[]
+    t=len(d)
+    if t==1:
+        print(1)
+    else:
+        for i in range(t):
+            for j in range(i,t):
+                    s.append(d[i]+d[j])
+        print(len(set(s)))
+
+'''The code once again works just fine for the sample test cases but encounters a TLE for the submission test case. So, will have to revisit the problem.'''
+
+#For problem https://www.codechef.com/problems/PROBDIFF
+
+for _ in range(int(input())):
+    k,m,n,o=map(int,input().split(" "))
+    if k==m==n==o:
+        print("0")
+    elif(k==n or m==o) and (k==m or n==o) and (k==o or m==n):
+        print("1")
+    else:
+        print("2")
+
+
+#For problem https://www.codechef.com/practice/LP2TO301/problems/MAKEDIV3
+
+for i in range(int(input())):
+    n=int(input())
+    if n==1:
+        print(3)
+    elif n==2:
+        print(33)
+    else:
+        print(int("3"+'0'*(n-2)+"3"))
+
+
+#For problem https://www.codechef.com/problems/RRCOPY
+
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    p=[]
+    for i in l:
+        if i not in p:
+            p.append(i)
+    print(len(p))
+
+'''The code works perfectly fine for the sample test cases and for the first submission case but encounters a TLE at the last test case. So rewriting code.'''
+
+
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    print(len(set(l)))
+
+
+#For problem 
