@@ -1,0 +1,87 @@
+#For problem https://www.codechef.com/problems/EQUALCOIN
+
+for _ in range(int(input())):
+    x,y=map(int, input().split())
+    if (x!=0 and (x+(y*2))%2==0) or (x==0 and y%2==0):
+        print("YES")
+    else:
+        print("NO")
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+#For problem https://www.codechef.com/problems/EVMHACK
+
+for _ in range(int(input())):
+    a,b,c,p,q,r=map(int, input().split())
+    if (a+b+c)>(p+q+r)/2:
+        print("YES")
+    elif (a+b+r)>(p+q+r)/2 or (a+q+c)>(p+q+r)/2 or (p+b+c)>(p+q+r)/2:
+        print("YES")
+    else:
+        print("NO")
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+      
+#For problem https://www.codechef.com/problems/CRDGAME3
+
+for _ in range(int(input())):
+    pc,pr=map(int, input().split())
+    sc=sr=''
+    if pc//9!=0:
+        sc+="9"*(pc//9)
+        if pc%9!=0:
+            sc+=str(pc%9)
+    else:
+        sc+=str(pc)
+    if pr//9!=0:
+        sr+="9"*(pr//9)
+        if pr%9!=0:
+            sr+=str(pr%9)
+    else:
+        sr+=str(pr)
+    if len(sc)==len(sr):
+        print(1, len(sc))
+    elif len(sc)<len(sr):
+        print(0, len(sc))
+    else:
+        print(1, len(sr))
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/problems/TTENIS
+
+for _ in range(int(input())):
+    s=input()
+    c,d=s.count("1"), s.count("0")
+    if c==d==10:
+        if s[0]=="0":
+         print("LOSE")
+        else:
+            print("WIN")
+    elif c>d:
+        print("WIN")
+    else:
+        print("LOSE")
+      
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+#For problem https://www.codechef.com/problems/REMOVEBAD
+
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    d={}
+    for i in l:
+        if i not in d:
+            d[i]=1
+        else:
+            d[i]+=1
+    print(n-max(d.values()))
+
+'''The code ran just fine and submitted with all test cases passed.'''
