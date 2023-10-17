@@ -1,0 +1,148 @@
+#For problem https://www.codechef.com/problems/DISCHAR
+
+for _ in range(int(input())):
+    s=input()
+    t=''
+    for i in s:
+        if i not in t:
+            t+=i
+    print(len(t))
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+#For problem https://www.codechef.com/problems/MINDIST1 
+
+for _ in range(int(input())):
+    n=int(input())
+    s=input()
+    c,d=0,0
+    for i in range(n):
+        if s[i]=="1":
+            if i%2==0:
+                c+=1
+            else:
+                d+=1
+    if c and d:
+        print(1)
+    else:
+        print(2)
+
+  '''Really Really Good Question.''''''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/problems/MAKEPALAGAIN
+
+for _ in range(int(input())):
+    n=int(input())
+    s=input()
+    c=0
+    if s==s[::-1]:
+        print("YES")
+    else:
+        if sorted(s[::2])==sorted(s[1::2]):
+            print("YES")
+        else:
+            print("NO")
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/problems/CORUS
+
+for _ in range(int(input())):
+    n,q=map(int, input().split())
+    s=input()
+    d={}
+    for i in s:
+        if i not in d:
+            d[i]=1
+        else:
+            d[i]+=1
+    for i in range(q):
+        c=0
+        s=int(input())
+        for j in d.values():
+            if j>s:
+                c+=abs(j-s)
+        print(c)
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/problems/FANCY
+
+for _ in range(int(input())):
+    s=input().split()
+    if "not" in s:
+        print("Real Fancy")
+    else:
+        print("regularly fancy")
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/problems/PETSTORE
+
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    d={}
+    flag=False
+    for i in l:
+        if i not in d:
+            d[i]=1
+        else:
+            d[i]+=1
+    for i in d.values():
+        if i%2!=0:
+            print("NO")
+            flag=True
+            break
+    if flag!=True:
+        print("YES")
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/problems/TSTROBOT
+
+for _ in range(int(input())):
+    n,x=map(int, input().split())
+    s=input()
+    l=[x]
+    for i in s:
+        if i=="L":
+            x+=1 
+        else:
+            x-=1
+        if x not in l:
+            l.append(x)
+    print(len(l))
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+#For problem https://www.codechef.com/problems/NAME2
+
+'''The code runs fine for the sample test cases but fails for the submission test cases.So, will revisit tomorrow.'''
+for _ in range(int(input())):
+    m,w=map(str, input().split())
+    s1,s2=set(m),set(w)
+    c=d=0
+    for i in s1:
+        if i in s2:
+            c+=1
+    for i in s2:
+        if i in s1:
+            d+=1
+            
+    if c==len(s1) or d==len(s2):
+        print("YES")
+    else:
+        print("NO")
