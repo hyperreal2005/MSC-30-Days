@@ -1,0 +1,205 @@
+#For problem https://www.codechef.com/problems/EQPAIR
+
+'''The code runs just fine for the sample test cases and for the first of three submission test cases, but, encounters a TLE at the second case. So, rewriting the code.'''
+
+for i in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    s=set(l)
+    c=0
+    for i in range(n):
+        for j in range(i+1,n):
+            if l[i]==l[j]:
+                c+=1
+    print(c)
+
+'''The code once again runs just fine for the sample test cases and for the first of three submission test cases, but, encounters a TLE at the second case. So, rewriting the code.'''
+
+for i in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    c=0
+    p=[]
+    for i in range(n):
+        t=l.count(l[i])
+        if t>1 and l[i] not in p:
+            c+=(t*(t-1))//2
+            p.append(l[i])
+    print(c)
+
+'''The code once again runs just fine for the sample test cases and for two of the three submission test cases, but, encounters a TLE at the last case. So, rewriting the code.'''
+
+for i in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    c=0
+    p=[]
+    for i in l:
+        if i not in p:
+            c+=(l.count(i)*(l.count(i)-1))//2
+            p.append(i)
+    print(c)
+
+'''The code once again runs just fine for the sample test cases and for two of the three submission test cases, but, encounters a TLE at the last case. So, rewriting the code.'''
+
+for i in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    s=set(l)
+    c=0
+    for i in s:
+        c+=(l.count(i)*(l.count(i)-1))//2
+    print(c)
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+for i in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    c=0
+    d={}
+    for i in l:
+        if i not in d:
+            d[i]=1
+        else:
+            d[i]+=1
+    for i in d.values():
+        c+=(i*(i-1))//2
+    print(c)
+
+
+#For problem https://www.codechef.com/START104D/problems/DOUBLERENT
+
+x=int(input())
+print(2*x)
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/START104D/problems/PIZZAC
+
+for _ in range(int(input())):
+    n=int(input())
+    if n==1:
+        print("Yes")
+    elif n%2==0:
+        print("Yes")
+    else:
+        print("No")
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/START104D/problems/SANTACHOC
+
+for _ in range(int(input())):
+    n,k=map(int, input().split())
+    l=list(map(int, input().split()))
+    t=sum(l)//n
+    if t<1:
+        print("No")
+    else:
+        if k*n>=sum(l)%n:
+            print("Yes")
+        else:
+            print("No")
+            
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/START104D/problems/GCDLM
+
+import math
+for _ in range(int(input())):
+    x,y,k=map(int, input().split())
+    for i in range(k):
+        if x==y:
+            break
+        if x>y:
+            x=math.gcd(x,y)
+        else:
+            y=math.gcd(x,y)
+        if x>y:
+            x=math.lcm(x,y)
+        else:
+            y=math.lcm(x,y)
+    print(x+y)
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+
+#For problem https://www.codechef.com/START104D/problems/MAXIMISESUM
+
+'''The code runs just fine for the sample test cases and for the first submission test cases, but, encounters a TLE at the second case. So, rewriting the code.'''
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    p=l.copy()
+    s=[]
+    c=0
+    while True:
+        p.pop(l.index(max(l)))
+        secmax=max(p)
+        l[l.index(min(l))]=min(max(l),secmax)
+        p=l.copy()
+        s.append(sum(l))
+        if sum(l)==c:
+            break
+        c=sum(l)
+    print(max(s))
+
+'''The code runs just fine for the sample test cases and for the first submission test cases, but, encounters a TLE at the second case. So, rewriting the code.'''
+
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    p=l.copy()
+    s=[]
+    c=0
+    while True:
+        p.pop(l.index(max(l)))
+        secmax=max(p)
+        l[l.index(min(l))]=min(max(l),secmax)
+        p=l.copy()
+        if sum(l)==c:
+            break
+        s.append(sum(l))
+        c=sum(l)
+    print(max(s))
+
+'''The code runs just fine for the sample test cases and for the first submission test cases, but, encounters a TLE at the second case. So, rewriting the code.'''
+
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    l.sort()
+    s=[]
+    c=0
+    while True:
+        l[l.index(min(l))]=min(l[-1],l[-2])
+        if sum(l)==c:
+            break
+        if sum(l)>c:
+            c=sum(l)
+        else:
+            break
+    print(c)
+
+'''The code runs just fine for the sample test cases and for the first submission test cases, but, encounters a TLE at the second case. So, will have to revisit the problem tomorrow.'''
+
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    l.sort()
+    c=0
+    while True:
+        l[l.index(min(l))]=min(l[-1],l[-2])
+        if sum(l)>c:
+            c=sum(l)
+        else:
+            break
+    print(c)
