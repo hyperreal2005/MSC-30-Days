@@ -1,0 +1,62 @@
+#For problem https://www.codechef.com/problems/PRIMEREVERSE
+
+for _ in range(int(input())):
+    n=int(input())
+    a=input()
+    b=input()
+    if sorted(list(a))==sorted(list(b)):
+        print("YES")
+    else:
+        print("NO")
+
+
+#For problem https://www.codechef.com/problems/MATPAN
+
+for _ in range(int(input())):
+    l=list(map(int, input().split()))
+    s=sorted(set(input()))
+    c=0
+    for i in range(26):
+        if chr(97+i) not in s:
+            c+=l[i]
+    print(c)
+
+#For problem https://leetcode.com/problems/set-matrix-zeroes/
+
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        if matrix==[]:
+            return []
+        m,n=len(matrix), len(matrix[0])
+        lr,lc=[0]*m,[0]*n
+        for i in range(m):
+            for j in range(n):
+                if matrix[i][j]==0:
+                    lr[i],lc[j]=1,1
+        for i in range(m):
+            for j in range(n):
+                if lr[i] or lc[j]:
+                    matrix[i][j]=0
+
+#For problem https://www.codechef.com/problems/TRUEDARE
+
+for _ in range(int(input())):
+    c=0
+    tr=int(input())
+    ltr=list(map(int, input().split()))
+    dr=int(input())
+    ldr=list(map(int, input().split()))
+    ts=int(input())
+    lts=list(map(int, input().split()))
+    ds=int(input())
+    lds=list(map(int, input().split()))
+    for i in lts:
+        if i in ltr:
+            c+=1
+    for i in lds:
+        if i in ldr:
+            c+=1
+    if len(lts)+len(lds)==c:
+        print("yes")
+    else:
+        print("no")
