@@ -1,0 +1,42 @@
+#For problem https://www.codechef.com/problems/ALTSTR
+
+for _ in range(int(input())):
+    n=int(input())
+    s=input()
+    p,q=s.count("0"), s.count("1")
+    print(2*min(p,q)+ min(abs(p-q),1))
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+#For problem https://www.codechef.com/problems/SRTARR
+
+for _ in range(int(input())):
+    n=int(input())
+    s=input()
+    print(s.count("10"))
+
+'''The code ran just fine and submitted with all test cases passed.'''
+
+
+#For problem https://www.codechef.com/problems/NAME2
+
+for _ in range(int(input())):
+    m,w=map(str, input().split())
+    if len(m)>len(w):
+        p,q=w,m
+    else:
+        p,q=m,w
+    i=j=0
+    while i<len(p) and j<len(q):
+        if p[i]==q[j]:
+            i+=1 
+            j+=1 
+        else:
+            j+=1 
+    if i==len(p):
+        print("YES") 
+    else:
+        print("NO")
+
+'''The code ran just fine and submitted with all test cases passed.'''
