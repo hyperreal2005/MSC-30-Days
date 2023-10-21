@@ -1,0 +1,21 @@
+#For problem https://www.codechef.com/problems/LADDU
+
+for _ in range(int(input())):
+    act,orig=map(str, input().split())
+    c=0
+    for i in range(int(act)):
+        s=input()
+        if "CONTEST_WON" in s:
+            c+=300
+            if int(s.split()[-1])<=20:
+                c+=(20-int(s.split()[-1]))
+        elif "TOP_CONTRIBUTOR" in s:
+            c+=300
+        elif "BUG_FOUND" in s:
+            c+=int(s.split()[-1])
+        else:
+            c+=50
+    if "NON" in orig:
+        print(c//400)
+    else:
+        print(c//200)
