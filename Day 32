@@ -1,0 +1,13 @@
+#For problem https://www.codechef.com/problems/NONADJFLIP
+
+for _ in range(int(input())):
+    n=int(input())
+    s=input()
+    if "1" not in s:
+        print(0)
+    else:
+        if s.count("11")>0:
+            print(2)
+        else:
+            print(1)
+
