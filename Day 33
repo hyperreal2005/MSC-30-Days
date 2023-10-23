@@ -1,0 +1,78 @@
+#For problem https://www.codechef.com/problems/CHFICRM
+'''The code works just fine for the sample test cases but fails at the second submission test. So, rewritiing the code.'''
+
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    s5=s10=0
+    flag=True
+    for i in l:
+        if i==5:
+            s5+=1
+        elif i==10:
+            if s5<1:
+                print("NO")
+                flag=False
+                break
+            else:
+                s5-=1
+                s10+=1
+        else:
+            if s5>=2:
+                s5-=2
+            elif s10>=1:
+                s10-=1
+            else:
+                print("NO")
+                flag=False
+                break
+    if flag==True:
+        print("YES")
+
+
+
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    s5=s10=0
+    flag=True
+    for i in l: 
+        if i==5: 
+            s5+=1
+        elif i==10: 
+            if s5>0: 
+                s5-=1
+                s10+=1
+            else: 
+                flag=False
+                break
+        else: 
+            if s10>0: 
+                s10-=1
+            elif s5>=2: 
+                s5-=2
+            else: 
+                flag=False
+                break
+    if flag==False:
+        print("NO")
+    else:
+        print("YES")
+
+  '''The code ran just fine and submitted with all test cases passed.'''
+
+#For problem https://www.codechef.com/problems/MODEFREQ
+
+from statistics import mode
+for _ in range(int(input())):
+    n=int(input())
+    l=list(map(int, input().split()))
+    d={}
+    for i in l:
+        if i not in d:
+            d[i]=1
+        else:
+            d[i]+=1
+    print(mode(sorted(list(d.values()))))
+
+ '''The code ran just fine and submitted with all test cases passed.'''
